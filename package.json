@@ -1,0 +1,27 @@
+{
+  "author": "Paul-Lewis Nunn",
+  "description": "Snapshot components atomically with a friendly output",
+  "homepage": "https://github.com/paullewisn/jest-snapshot-propifier",
+  "keywords": [
+    "jest",
+    "snapshot",
+    "react-test-renderer"
+  ],
+  "main": "./index.ts",
+  "name": "jest-snapshot-propifier",
+  "packageManager": "yarn@3.1.1",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paullewisn/jest-snapshot-propifier.git"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "jest": "^27.4.3",
+    "prettier": "^2.5.0"
+  }
+}
