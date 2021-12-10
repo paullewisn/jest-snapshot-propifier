@@ -3,4 +3,21 @@
     "editor.fontLigatures": false,
     "editor.fontSize": 15,
     "editor.fontWeight": "normal",
+    "search.exclude": {
+        "**/.yarn": true,
+        "**/.pnp.*": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "scss.lint.validProperties": ["composes"],
+    // "typescript.tsdk": "node_modules/typescript/lib"
+    // "typescript.enablePromptUseWorkspaceTsdk": true
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "eslint.run": "onType",
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
