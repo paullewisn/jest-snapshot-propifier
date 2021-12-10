@@ -9,7 +9,7 @@
   ],
   "main": "./index.ts",
   "name": "jest-snapshot-propifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/paullewisn/jest-snapshot-propifier.git"
