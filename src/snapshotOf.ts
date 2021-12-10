@@ -7,4 +7,4 @@ type SnapshotOf = (
 
 const snapshotOf: SnapshotOf = (component) => create(component).toJSON();
 
-export default snapshotOf;
+export { snapshotOf };
