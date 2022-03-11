@@ -1,0 +1,9 @@
+### 1.1.0
+
+-   Added options argument to `snapshotOf`.
+-   Added `flushEffect` to options. This allows `useEffect` calls to complete before the snapshot is created.
+-   Added `create` function as sugar for using `react-test-renderer`'s `act`. No need to worry about which `act` you are importing.
+
+## 1.0.0
+
+-   Initial release
