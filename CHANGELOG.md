@@ -1,3 +1,7 @@
+#### 1.1.2
+
+-   Better null handling (bug)
+
 ### 1.1.0
 
 -   Added options argument to `snapshotOf`.

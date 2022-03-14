@@ -1,30 +1,33 @@
 import { isValidElement } from "react";
 
 const recursivelyProcessProps = (propName, propValue) => {
-    switch (true) {
-        case isValidElement(propValue):
-            return "[! Component to test !]";
+	switch (true) {
+		case propValue === null:
+			return "null";
 
-        case typeof propValue === "function":
-            return "[! Function to test !]";
+		case isValidElement(propValue):
+			return "[! Component to test !]";
 
-        case typeof propValue === "object" && propValue.length === undefined:
-            return JSON.stringify(propValue);
+		case typeof propValue === "function":
+			return "[! Function to test !]";
 
-        case typeof propValue === "object" && propValue.length >= 0:
-            return propValue.map((value) => {
-                const isMock = Boolean(value?.type?.getMockName);
+		case typeof propValue === "object" && propValue.length === undefined:
+			return JSON.stringify(propValue);
 
-                const childPropName = isMock && value?.type?.getMockName();
-                return recursivelyProcessProps(
-                    childPropName || propName,
-                    value
-                );
-            });
+		case typeof propValue === "object" && propValue.length >= 0:
+			return propValue.map((value) => {
+				const isMock = Boolean(value?.type?.getMockName);
 
-        default:
-            return propValue;
-    }
+				const childPropName = isMock && value?.type?.getMockName();
+				return recursivelyProcessProps(
+					childPropName || propName,
+					value
+				);
+			});
+
+		default:
+			return propValue;
+	}
 };
 
 export { recursivelyProcessProps };
