@@ -7,7 +7,7 @@
     "snapshot",
     "react-test-renderer"
   ],
-  "module": "./index.js",
+  "main": "./build/index.js",
   "name": "jest-snapshot-propifier",
   "version": "1.2.1",
   "repository": {
@@ -15,9 +15,11 @@
     "url": "https://github.com/paullewisn/jest-snapshot-propifier.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-typescript": "^7.16.0",
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.17.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^27.0.3",
     "@types/lodash.snakecase": "^4.1.6",
     "@types/react": "^17.0.37",
@@ -41,6 +43,7 @@
     "react-test-renderer": "^17.0.2"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rimraf build && babel --out-dir build --extensions '.ts' index.ts src"
   }
 }
