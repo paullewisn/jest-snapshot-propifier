@@ -3,7 +3,7 @@
 Reduce the size of snapshots while also encouraging atomic testing practices.
 
 -   [createMock](#createmock)
-    -   [Setup](#setup)
+    -   [Setup (`div`)](#setup-div)
     -   [With no props](#with-no-props)
     -   [With basic props](#with-basic-props)
     -   [With objects as props](#with-objects-as-props)
@@ -11,6 +11,7 @@ Reduce the size of snapshots while also encouraging atomic testing practices.
     -   [With components as props](#with-components-as-props)
     -   [With basic children](#with-basic-children)
     -   [With components as children](#with-components-as-children)
+    -   [Setup (`span`)](#setup-span)
 -   [snapshotOf](#snapshotof)
     -   [Basic use case](#basic-use-case)
     -   [With useEffect](#with-useeffect)
@@ -21,16 +22,16 @@ Reduce the size of snapshots while also encouraging atomic testing practices.
 
 returns: `jest.Mock`
 
-Props and children are represented in a uniform and logical way. Props which require further testing are highlighted within the snapshot. Components are replaced with `div`s which have `data-attributes` set.
+Props and children are represented in a uniform and logical way. Props which require further testing are highlighted within the snapshot. Components are replaced with either `div`s or `span`s which have `data-attributes` set as the props which have been passed in.
 
-### Setup
+### Setup (`div`)
 
 `/Bar/__mocks__/index.ts`
 
 ```js
 import { createMock } from "jest-snapshot-propifier";
 
-export const Foo = createMock("Bar");
+export const Foo = createMock({ name: "Bar" });
 ```
 
 `/Foo/index.ts`
@@ -171,6 +172,38 @@ test("With components as children", () => {
 
 ---
 
+### Setup (`span`)
+
+For cases where it would not be appropriate to use a `div`
+
+`/Bar/__mocks__/index.ts`
+
+```js
+import { createMock } from "jest-snapshot-propifier";
+
+export const Foo = createMock({ name: "Bar", element: "span" });
+```
+
+`/Foo/index.ts`
+
+```js
+export const Foo = (props) => <Bar {...props} />;
+```
+
+`/Foo/spec.tsx`
+
+```js
+test("With no props", () => {
+	expect(snapshotOf(<Foo />)).toMatchInlineSnapshot(`
+    	      <span
+    	        data-component="<Bar />"
+    	      />
+        `);
+});
+```
+
+---
+
 ## snapshotOf
 
 returns: `ReactTestRendererJSON | ReactTestRendererJSON[]`
@@ -273,3 +306,7 @@ test("With create", () => {
 	//or use foo.toJSON() if you just want a snapshot
 });
 ```
+
+---
+
+<sub>[If you've found this useful I'd appreciate a beer 🍺](https://www.paypal.com/paypalme/paullewisnunn)</sub>

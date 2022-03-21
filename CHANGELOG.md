@@ -1,3 +1,7 @@
+#### 1.2.0
+
+-   Added ability to set root element for mock
+
 #### 1.1.2
 
 -   Better null handling (bug)

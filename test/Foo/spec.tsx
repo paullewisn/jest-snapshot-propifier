@@ -1,8 +1,8 @@
-import { snapshotOf } from "../../snapshotOf";
+import { snapshotOf } from "../../src/snapshotOf";
 import React from "react";
 import Foo from ".";
 import Bar from "../Bar";
-import { createMock } from "../../createMock";
+import { createMock } from "../../src/createMock";
 
 jest.mock("../Bar");
 
