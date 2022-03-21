@@ -44,6 +44,6 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "rimraf build && babel --out-dir build --extensions '.ts' index.ts src"
+    "build": "rimraf build && babel --out-dir build --extensions '.ts' src"
   }
 }
