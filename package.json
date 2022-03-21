@@ -7,7 +7,7 @@
     "snapshot",
     "react-test-renderer"
   ],
-  "module": "./index.mjs",
+  "module": "./index.js",
   "name": "jest-snapshot-propifier",
   "version": "1.2.0",
   "repository": {
