@@ -23,8 +23,10 @@ const recursivelyProcessProps = (propName, propValue) => {
 
     case typeof propValue === "object" && propValue.length >= 0:
       return propValue.map(value => {
-        const isMock = Boolean(value?.type?.getMockName);
-        const childPropName = isMock && value?.type?.getMockName();
+        var _value$type, _value$type2;
+
+        const isMock = Boolean(value === null || value === void 0 ? void 0 : (_value$type = value.type) === null || _value$type === void 0 ? void 0 : _value$type.getMockName);
+        const childPropName = isMock && (value === null || value === void 0 ? void 0 : (_value$type2 = value.type) === null || _value$type2 === void 0 ? void 0 : _value$type2.getMockName());
         return recursivelyProcessProps(childPropName || propName, value);
       });
 

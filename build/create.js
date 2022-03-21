@@ -14,7 +14,7 @@ var _reactTestRenderer = require("react-test-renderer");
 const create = (component, options) => {
   let renderer;
 
-  if (options?.flushEffects) {
+  if (options !== null && options !== void 0 && options.flushEffects) {
     (0, _reactTestRenderer.act)(() => {
       renderer = (0, _reactTestRenderer.create)(component);
     });
