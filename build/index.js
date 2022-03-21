@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createMock = require("./src/createMock");
+var _createMock = require("./createMock");
 
 Object.keys(_createMock).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -17,7 +17,7 @@ Object.keys(_createMock).forEach(function (key) {
   });
 });
 
-var _create = require("./src/create");
+var _create = require("./create");
 
 Object.keys(_create).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -30,7 +30,7 @@ Object.keys(_create).forEach(function (key) {
   });
 });
 
-var _snapshotOf = require("./src/snapshotOf");
+var _snapshotOf = require("./snapshotOf");
 
 Object.keys(_snapshotOf).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
