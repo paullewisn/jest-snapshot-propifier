@@ -10,7 +10,7 @@
   "main": "./build/index.js",
   "types": "./index.d.ts",
   "name": "jest-snapshot-propifier",
-  "version": "1.2.6",
+  "version": "1.3.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/paullewisn/jest-snapshot-propifier.git"
