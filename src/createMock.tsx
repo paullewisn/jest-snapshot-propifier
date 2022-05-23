@@ -2,20 +2,18 @@ import snakeCase from "lodash.snakecase";
 import React from "react";
 import { recursivelyProcessProps } from "./utils/recursivelyProcessProps";
 
-type mockUtilTypeType = {
+type Base = { props?: Record<string, unknown>; element?: "span" | "div" };
+
+interface CreateArgs extends Base {
 	name: string;
-	props?: Record<string, unknown>;
-	element?: "span" | "div";
-};
+}
+interface Props extends Base {
+	$name: string; //don't use "name" as this breaks stuff
+}
 
-type mockUtilType = ({ name, props }: mockUtilTypeType) => jest.Mock;
+type CreateFunc = (args: CreateArgs | string) => jest.Mock;
 
-type MockType = {
-	$name: string;
-	element?: HTMLElement;
-};
-
-const Mock: React.FC<MockType> = ({
+const Mock: React.FC<Props> = ({
 	$name,
 	children,
 	element = "div",
@@ -42,11 +40,22 @@ const Mock: React.FC<MockType> = ({
 	}
 };
 
-const createMock: mockUtilType = ({ name, props, element }) =>
-	jest
-		.fn((override = {}) => (
-			<Mock $name={name} {...props} {...override} element={element} />
-		))
-		.mockName(name);
+const createMock: CreateFunc = (args) => {
+	let elementProps: Props = { $name: "" };
+
+	if (typeof args === "string") {
+		elementProps.$name = args;
+	} else {
+		elementProps = {
+			...args.props,
+			element: args.element,
+			$name: args.name,
+		};
+	}
+
+	return jest
+		.fn((override = {}) => <Mock {...elementProps} {...override} />)
+		.mockName(elementProps.$name);
+};
 
 export { createMock };

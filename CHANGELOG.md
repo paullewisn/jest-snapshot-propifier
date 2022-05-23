@@ -1,3 +1,7 @@
+#### 1.4.0
+
+-   `createMock` can now either be passed an object or just a string. It a string is passed then this will be mapped to the mock name (string is not sanitised, beware of dragons 🐉)
+
 #### 1.3.0
 
 -   Added typings
