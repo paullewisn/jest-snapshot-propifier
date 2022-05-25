@@ -1,5 +1,5 @@
 {
-  "author": "Paul-Lewis Nunn",
+  "author": "beardguy",
   "description": "Snapshot components atomically with a friendly output",
   "homepage": "https://github.com/paullewisn/jest-snapshot-propifier",
   "keywords": [
@@ -10,7 +10,7 @@
   "main": "./build/index.js",
   "types": "./index.d.ts",
   "name": "jest-snapshot-propifier",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/paullewisn/jest-snapshot-propifier.git"
@@ -42,8 +42,8 @@
   },
   "dependencies": {
     "lodash.snakecase": "^4.1.1",
-    "react": "^17.0.2",
-    "react-test-renderer": "^17.0.2"
+    "react": ">=17.0.2",
+    "react-test-renderer": ">=17.0.2"
   },
   "scripts": {
     "test": "jest",
