@@ -42,3 +42,16 @@ Object.keys(_snapshotOf).forEach(function (key) {
     }
   });
 });
+
+var _getChildOfMock = require("./getChildOfMock");
+
+Object.keys(_getChildOfMock).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _getChildOfMock[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _getChildOfMock[key];
+    }
+  });
+});

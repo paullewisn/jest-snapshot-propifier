@@ -1,6 +1,10 @@
+#### 1.5.0
+
+-   `getChildOfMock` Utility method to return a nested child mock from a parent. Useful for partial snapshots. Quite slow so use sparingly.
+
 #### 1.4.1
 
--   React 18  
+-   React 18
 
 #### 1.4.0
 
