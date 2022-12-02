@@ -30,4 +30,4 @@ export function getChildOfMock({
 	props,
 	ctx,
 	lastParent,
-}: GetChildOfMock): ReactTestRendererJSON | ReactTestRendererJSON[];
+}: GetChildOfMock): ReactElement | JSX.Element;
