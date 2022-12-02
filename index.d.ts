@@ -30,4 +30,4 @@ export function getChildOfMock({
 	props,
 	ctx,
 	lastParent,
-}: GetChildOfMock): ReactElement | JSX.Element;
+}: GetChildOfMock): FC;
