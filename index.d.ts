@@ -16,7 +16,7 @@ type GetChildOfMock = {
 	lastParent: string;
 };
 
-export function createMock({ name, props }: mockUtilTypeType): jest.Mock;
+export function createMock(arg0: mockUtilTypeType | string): jest.Mock;
 export function create(
 	component: ReactElement | JSX.Element,
 	options?: { flushEffects: boolean }
