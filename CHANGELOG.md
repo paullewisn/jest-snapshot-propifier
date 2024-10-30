@@ -1,3 +1,7 @@
+#### 1.5.5
+
+-   Updated types
+
 #### 1.5.0
 
 -   `getChildOfMock` Utility method to return a nested child mock from a parent. Useful for partial snapshots. Quite slow so use sparingly.

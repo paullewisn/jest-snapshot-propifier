@@ -17,5 +17,8 @@ module.exports = {
 		ecmaVersion: 2020,
 		sourceType: "module",
 	},
-	plugins: ["react", "@typescript-eslint", "prettier"],
+	plugins: ["react", "@typescript-eslint", "perfectionist", "prettier"],
+	rules: {
+		"perfectionist/sort-imports": "error",
+	},
 };

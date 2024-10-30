@@ -10,7 +10,7 @@
   "main": "./build/index.js",
   "types": "./index.d.ts",
   "name": "jest-snapshot-propifier",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/paullewisn/jest-snapshot-propifier.git"
@@ -30,9 +30,10 @@
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
     "babel-jest": "^27.4.4",
-    "eslint": "^8.4.1",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-perfectionist": "^3.9.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "jest": "^27.4.4",

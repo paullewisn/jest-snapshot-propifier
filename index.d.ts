@@ -1,12 +1,12 @@
-import { FC, ReactElement } from "react";
+import { FC, ReactElement, ReactNode } from "react";
 import { ReactTestRenderer, ReactTestRendererJSON } from "react-test-renderer";
 
 declare module "jest-snapshot-propifier" {}
 
 type mockUtilTypeType = {
 	name: string;
-	props?: Record<string, unknown>;
 	element?: "span" | "div";
+	props?: Record<string, unknown>;
 };
 
 type GetChildOfMock = {
@@ -18,11 +18,11 @@ type GetChildOfMock = {
 
 export function createMock(arg0: mockUtilTypeType | string): jest.Mock;
 export function create(
-	component: ReactElement | JSX.Element,
+	component: ReactElement | JSX.Element | ReactNode,
 	options?: { flushEffects: boolean }
 ): ReactTestRenderer;
 export function snapshotOf(
-	component: ReactElement | JSX.Element,
+	component: ReactElement | JSX.Element | ReactNode,
 	options?: { flushEffects: boolean }
 ): ReactTestRendererJSON | ReactTestRendererJSON[];
 export function getChildOfMock({
